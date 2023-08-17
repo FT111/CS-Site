@@ -1,4 +1,101 @@
 
-.navbar {
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+nav {
+    padding: 0 25px;
+    width: 100%;
+}
+
+body {
+    font-family: 'League Spartan', Trebuchet MS, Arial, sans-serif;
+    font-size: 20px;
+    background-color: rgb(80, 109, 132);
+}
+
+h1 {
+    font-size: 13vw;
+    font-family: 'League Spartan', Trebuchet MS, Arial, sans-serif;
+    text-align: center;
+    margin-top: 10%;
+    color: white;
+    font-weight: bold;
+    letter-spacing: -5px;
+}
+
+#CAD {
+    text-align: left;
+    color: rgb(243, 213, 192);
+    margin-left: 8%;
+    margin-top: -5%;
+    font-size: 20vw;
+}
+
+.navItem {
+    padding: 10px;
+    font-size: 2rem;
+    order: 1;
+    width: 100%;
+    text-align: center;
+    display: block;
+
+}
+
+.navLinks {
+    list-style-type: none;
+}
+
+.navLinks {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(243, 213, 192);
+    align-items: center;
+}
+.navItem a {
+    display: block;
+    padding: 15px 15px;
+    color: #000;
+    color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    font-weight: 900;
+    font-style: italic;
+    -webkit-text-stroke: 0.5px rgb(243, 213, 192);
+    transition-duration: 0.15s;
+}
+.navItem a:hover {
+    color: rgb(243, 213, 192);
+}
+.navContainer {
+    /*display: flex;*/
+    width: 100%;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(243, 213, 192);
+    border-bottom-style: solid;
+}
+
+@media (min-width: 481px) {
+    .navContainer {
+        align-items: center;
+    }
+}
+
+@media all and (min-width: 960px) {
+    .navLinks {
+        align-items: center;     
+        flex-wrap: nowrap;
+        background: none;
+        margin-right: 70%;
+        margin-left: 1%;
+    }
+    .navItem {
+        order: 1;
+        position: relative;
+        display: block; 
+        width: auto;
+    }
 }
