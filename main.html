@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    
+    <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(event) {
+            this.querySelectorAll(".Parallax").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 540;
+                const y = (window.innerHeight - event.pageY * position) / 540;
+ 
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -18,11 +31,15 @@
     </div>
 </nav>
 
+
+
 <div class="hero">
     <h1>THE HISTORY OF</h1>
     <h1 id="CAD">CAD</h1>
-    <img id="heroImage" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Tests\Images\CAD_Hero.png">
+    <h2 class="subHeading">Computer-aided design is used in a wide variety of professions. CAD software is used heavily within various architecture, arts and engineering projects.</h2>
 </div>
+<img id="heroImage" class="Parallax" value="5" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Tests\Images\CAD_Hero.png">
+<img id="Grid" class="Parallax" value="-5" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Tests\Images\Pattern_Grid_32x32.png">
 
 </body>
 </html>
