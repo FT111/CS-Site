@@ -7,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
     
     <script type="text/javascript">
-        document.addEventListener("mousemove", parallax);
+        /*document.addEventListener("mousemove", parallax);
         function parallax(event) {
             this.querySelectorAll(".Parallax").forEach((shift) => {
                 const position = shift.getAttribute("value");
@@ -16,7 +16,7 @@
  
                 shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
             });
-        }
+        }*/
     </script>
 </head>
 <body>
@@ -25,21 +25,39 @@
     <div class="navContainer">
         <ul class="navLinks">
             <li class="navItem"><a href="main.html">HOME</a></li>
-            <li class="navItem"><a href="main.html">TIMELINE</a></li>
-            <li class="navItem"><a href="main.html">HISTORY</a></li>
-        </div>
+            <li class="navItem"><a href="cad.html">CAD?</a></li>
+            <li class="navItem"><a href="history.html">HISTORY</a></li>
+        </ul>
     </div>
 </nav>
 
 
 
 <div class="hero">
-    <h1>THE HISTORY OF</h1>
     <h1 id="CAD">CAD</h1>
-    <h2 class="subHeading">Computer-aided design is used in a wide variety of professions. CAD software is used heavily within various architecture, arts and engineering projects.</h2>
+    <h1>Computer Aided Design</h1>
+    <div class="subContainer">
+        <h2 class="subHeading">Computer-aided design is used in a wide variety of professions. CAD software is used heavily within various architecture, arts and engineering projects.</h2>
+    </div>
+    <div>
+        <a href="#findOutMore" id="heroButton">Find out more</a> 
+    </div>
+
 </div>
-<img id="heroImage" class="Parallax" value="5" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Tests\Images\CAD_Hero.png">
+<img id="heroImage" class="Parallax" value="5" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Images\2017-03-18-11-29-18.png">
 <img id="Grid" class="Parallax" value="-5" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Tests\Images\Pattern_Grid_32x32.png">
+
+
+<div class="buttonsContainer" id="findOutMore">
+    <a class="button" href="timeline.html">
+        <img class="buttonImage" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Images\Button1.jpg">
+        <h3 class="buttonText">Timeline</h3>
+    </a>
+    <a class="button" href="timeline.html">
+        <img class="buttonImage" src="C:\Users\Theta\Documents\Projects\CS-Site-1\Images\Button1.jpg">
+        <h3 class="buttonText">Timeline</h3>
+    </a>
+</div>
 
 </body>
 </html>

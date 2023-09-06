@@ -1,13 +1,16 @@
+:root {
+    --accent: rgb(243, 213, 192);
+}
 
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;    
+    margin: 0;
+    transition-duration: 0.5s;
 }
 
-nav {
-    padding: 0 25px;
-    width: 100%;
+a {
+    text-decoration: none;
 }
 
 html {
@@ -17,40 +20,82 @@ html {
 body {
     font-family: 'League Spartan', Trebuchet MS, Arial, sans-serif;
     font-size: 20px;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #0d3039;
 }
 
-h1 {
-    font-size: 13vw;
-    font-family: 'League Spartan', Trebuchet MS, Arial, sans-serif;
-    text-align: center;
-    margin-top: 10%;
-    color: ##f5f5f5;
-    font-weight: bold;
-    letter-spacing: -5px;
+
+
+
+nav {
+    padding: 0 25px;
+    width: 100%;
+    border-top: 8px;
+    border-top-color: var(--accent);
+    background-color: rgb(13, 48, 57, 0.85);
+    border-top-style: solid;
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0px;
+    z-index: 10;
 }
 
+.hero h1 {
+    font-size: 4.5rem;
+    font-family: 'League Spartan', Trebuchet MS, Arial, sans-serif;
+    text-align: left;
+    color: #f5f5f5;
+    font-weight: bold;
+    letter-spacing: -5%;
+}
+
+
 .subHeading {
-    font-size: 5vw;
+    font-size: 1.5rem;
     color: #d1d1d1;
-    letter-spacing: -5px;
+    letter-spacing: 0px;
+    font-weight: lighter;
+}
+.subContainer {
+    max-width: 40%;
+    word-wrap: normal;
 }
 
 #CAD {
     text-align: left;
-    color: rgb(243, 213, 192);
-    margin-left: 8%;
-    margin-top: -5%;
-    font-size: 20vw;
+    color: var(--accent);
+    font-size: 10vw;
+    margin-bottom: -1%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    height: 108vh;
+    width: 100%;
+    justify-content: center;
+    padding-left: 5%;
+    margin-bottom: 0px !important;
+}
+
+.hero * {
+    margin: 10px;
+}
+
+.hero:nth-child(1n) {
+    margin-top: -4%;
 }
 
 #heroImage {
-    margin-left: 55%;
-    margin-top: -20%;
+    object-fit: cover;
+    right: 0px;
+    bottom: -5px;
+    display: none;
     position: absolute;
-    width: auto;
-    max-height: 50%;
+    max-width: 70%;
+    /*background-color: var(--accent);*/
+    height: auto;
+    z-index: -1;
 }
 
 #heroBox {
@@ -63,6 +108,25 @@ h1 {
     z-index: 0;
 }
 
+#heroButton {
+    border-width: 4px;
+    border-color: var(--accent);
+    border-style: solid;
+    text-decoration: none;
+    padding: 10px;
+    transform: scale(0,0);
+    background-color: #0d3039;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    margin-top: 5px;
+
+
+}
+
+@keyframes scaleIn {
+    from { font-size: 0rem;}
+    to {font-size: 2.5rem;}
+  }
 #Grid {
     position: absolute;
     right: 0px;
@@ -70,7 +134,46 @@ h1 {
     z-index: -1;
     height: auto;
     max-width: 40%;
+    opacity: 0;
 }
+
+.buttonsContainer {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #22525e;
+}
+
+.button {
+    display: flex;
+    border-color: var(--accent);
+    border-width: 4px;
+    border-style: solid;
+    height: 70%;
+    width: auto;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+    transition-duration: 0.05 !important;
+}
+
+.buttonImage {
+    width: 100%;
+    height: 80%;
+    transition-duration: 0.05 !important;
+}
+
+.buttonText {
+    font-size: 2.5rem;
+    color: #f5f5f5;
+    padding: 10px;
+    letter-spacing: 1px;
+    animation: 0.25s ease-out 0.1s 1 scaleIn;
+}
+
 
 .pageContainer {
     overflow-y: scroll;
@@ -112,38 +215,41 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-bottom-width: 2px;
-    border-bottom-color: rgb(243, 213, 192);
     align-items: center;
 }
 .navItem a {
     display: block;
     padding: 15px 15px;
-    color: #000;
-    color: rgba(0, 0, 0, 0);
+    color: var(--accent);
     text-decoration: none;
+    width: fit-content;
     font-weight: 900;
-    -webkit-text-stroke: 0.1px rgb(243, 213, 192);
     transition-duration: 0.15s;
 }
 .navItem a:hover {
-    color: rgb(243, 213, 192);
+    color: white;
 }
+#heroButton:hover, .button:hover {
+    border-color: white;
+}
+.button:hover {
+    padding: 0px;
+}
+
+
 .navContainer {
     /*display: flex;*/
     width: 100%;
-    border-bottom-width: 2px;
-    border-bottom-color: rgb(243, 213, 192);
-    border-bottom-style: solid;
 }
 
 @media (min-width: 481px) {
     .navContainer {
         align-items: center;
     }
+    
 }
 
-@media all and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
     .navLinks {
         align-items: center;     
         flex-wrap: nowrap;
@@ -156,5 +262,8 @@ h1 {
         position: relative;
         display: block; 
         width: auto;
+    }
+    #heroImage {
+        display: block;
     }
 }
