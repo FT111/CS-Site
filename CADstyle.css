@@ -1,0 +1,41 @@
+:root {
+    --accent: rgb(243, 213, 192);
+    --white: #f5f5f5;
+    --accentSecondary: #22525e;
+}
+
+.cadContainer {
+    display: flex;
+    flex-direction: column;
+    height: 80dvh;
+    width: 100%;
+    padding: 8%;
+    margin-top: 1%;
+    gap: 1%;
+}
+
+.imageContainer {
+    max-width: 90%;
+    height: auto;
+}
+
+.textContainer {
+    max-width: 90%;
+    height: auto;
+    padding: 2%;
+    color: var(--white);
+    
+}
+
+#CC2 {
+    background-color: var(--accentSecondary);
+}
+
+@media only screen and (min-width: 768px) {
+    .cadContainer {
+        flex-direction: row;
+    }
+    .cadContainer > * {
+        max-width: 50%;
+    }
+}
